@@ -3,13 +3,10 @@ import video from "../assets/share.mp4";
 import logo from "../assets/logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
-
-  const responseGoogle = (response) =>{
-
-  }
+  const responseGoogle = (response) => {};
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
@@ -30,24 +27,26 @@ function Login() {
             </p>
           </div>
           <div>
-            <GoogleLogin
-              clientId={import.meta.env.VITE_React_Token}
-              render={(renderProps) => (
-                <button
-                  className="border-none flex mt-3  text-black items-center rounded-md gap-4 bg-white outline-none cursor-pointer p-2"
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                >
-                  <FcGoogle className="text-lg" />{" "}
-                  <p className="text-black text-lg font-bold">
-                    Sign Up With Google
-                  </p>
-                </button>
-              )}
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy="single_host_origin"
-            />
+            <GoogleOAuthProvider clientId={import.meta.env.VITE_React_Token}>
+              <GoogleLogin
+                render={(renderProps) => (
+                  <button
+                    className="border-none flex mt-3  text-black items-center rounded-md gap-4 bg-white outline-none cursor-pointer p-2"
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    <FcGoogle className="text-lg" />{" "}
+                    <p className="text-black text-lg font-bold">
+                      Sign Up With Google
+                    </p>
+                  </button>
+                )}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy="single_host_origin"
+                useOneTap
+              />
+            </GoogleOAuthProvider>
           </div>
         </div>
       </div>
