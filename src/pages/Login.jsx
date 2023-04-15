@@ -29,21 +29,8 @@ function Login() {
           <div>
             <GoogleOAuthProvider clientId={import.meta.env.VITE_React_Token}>
               <GoogleLogin
-                render={(renderProps) => (
-                  <button
-                    className="border-none flex mt-3  text-black items-center rounded-md gap-4 bg-white outline-none cursor-pointer p-2"
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                  >
-                    <FcGoogle className="text-lg" />{" "}
-                    <p className="text-black text-lg font-bold">
-                      Sign Up With Google
-                    </p>
-                  </button>
-                )}
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
-                cookiePolicy="single_host_origin"
                 useOneTap
               />
             </GoogleOAuthProvider>
