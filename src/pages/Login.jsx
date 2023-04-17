@@ -1,12 +1,31 @@
 import React from "react";
 import video from "../assets/share.mp4";
-import logo from "../assets/logo.png";
+import { client } from "../client";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import jwtDecode from "jwt-decode";
 
 function Login() {
-  const responseGoogle = (response) => {};
+  const navigate = useNavigate();
+
+  const responseGoogle = (response) => {
+    const decode = jwtDecode(response.credential);
+    console.log(decode);
+    localStorage.setItem("user", JSON.stringify(decode));
+
+    const { name, sub, picture } = decode;
+    const doc ={
+      _id:sub,
+      _type:'user',
+      userName:name,
+      image:picture
+    }
+
+    client.createIfNotExists(doc).then(() =>{
+       navigate("/feed");
+    })
+  };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
