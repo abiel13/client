@@ -16,7 +16,7 @@ function SideBar({ user, close }) {
     {name:'Pets' , img:''}
   ];
   return (
-    <div className="flex flex-col justify-between bg-slate-300 min-w-210 shadow-md overflow-y-scroll hide-scrollbar h-full">
+    <div className="flex flex-col justify-between  min-w-210 shadow-lg overflow-y-scroll hide-scrollbar h-full">
       <div className="flex flex-col">
         <Link to="/feed" className="my-6 px-5">
           <span

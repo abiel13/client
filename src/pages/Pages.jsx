@@ -6,7 +6,7 @@ function Pages() {
   return (
     <BrowserRouter>
     <Routes>
-        <Route path='/feed/*' exact element={<Home />} />
+        <Route path='/feed/*'  element={<Home />} />
         <Route path='/' element={<Login />} />
     </Routes>
     </BrowserRouter>
