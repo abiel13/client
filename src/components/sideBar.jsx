@@ -58,10 +58,10 @@ function SideBar({ user, close }) {
         user && (
           <Link
           to={`userProfile/${user._id}`}
-          className="my-6 mb-3 px-5"
+          className="my-6 mb-3 px-5 flex flex-col items-center gap-3 "
           >
           <img src={user.image} className='w-10 h-10 rounded-full bg-black ' />
-          <p>{user.userName}</p>
+          <p className='uppercase font-bold'>{user.userName}</p>
           </Link>
         )
       }
