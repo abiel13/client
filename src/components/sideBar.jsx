@@ -43,7 +43,7 @@ function SideBar({ user, close }) {
           </h3>
           {Categories.slice(0 , Categories.length -1).map((items) => (
             <NavLink
-              to={`/categories/${items.name}`}
+              to={`/category/${items.name}`}
               className={({isActive}) => (isActive ? isActiveStyle : style)}
               onClick={() => {
                 close && close(false);
