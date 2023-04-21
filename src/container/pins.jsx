@@ -7,7 +7,7 @@ function Pins({ user }) {
   return (
     <div className='px-3 md:px-5'>
       <div className="bg-gray-200">
-        <Navbar searched={SerchTermed} setSearched={setSerchTermed} />
+        <Navbar searched={SerchTermed} user={user} setSearched={setSerchTermed} />
       </div>
 <div className="h-full">
   <Routes>
