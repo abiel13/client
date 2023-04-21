@@ -23,7 +23,7 @@ function Login() {
     }
 
     client.createIfNotExists(doc).then(() =>{
-       navigate("/feed");
+       navigate("/");
     })
   };
 
