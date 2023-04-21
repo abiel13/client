@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter , Routes , Route} from 'react-router-dom'
-import { Home, Login } from './'
-
+import { Login } from './'
+import {Home } from '../container/home
 function Pages() {
   return (
     <BrowserRouter>
