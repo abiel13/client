@@ -18,7 +18,7 @@ function Navbar({ search, setSsearch, user }) {
           }}
           placeholder="search"
           onFocus={() => navigate('/search')}
-          className="w-full bg-white outlne-none "
+          className="w-full bg-white outline-none border-none"
         />
       </div>
     </div>
