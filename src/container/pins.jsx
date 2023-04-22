@@ -6,7 +6,7 @@ function Pins({ user }) {
   const [SerchTermed, setSerchTermed] = useState('')
   return (
     <div className='px-3 md:px-5'>
-      <div className="bg-gray-200">
+      <div className="bg-gray-50">
         <Navbar searched={SerchTermed} user={user} setSearched={setSerchTermed} />
       </div>
 <div className="h-full">
@@ -15,7 +15,7 @@ function Pins({ user }) {
     <Route path='/category/:catId' element={<Feed />} />
     <Route path='/pin-detail/:pin' element={<PinDetails user={user}/>} />
     <Route path='/createPin' element={<CreatePin user={user} />} />
-    <Route path='/search/:search' element={<Searched searched={SerchTermed} setSearched={setSerchTermed} />} />
+    <Route path='/search' element={<Searched searched={SerchTermed} setSearched={setSerchTermed} />} />
   </Routes>
 </div>
     </div>

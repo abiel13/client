@@ -4,14 +4,12 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import {  SideBar, UserProfile } from "../components";
 import Pins from "./pins";
-import { userQuery } from "../utils/queries";
+import { fetchUser, userQuery } from "../utils/queries";
 import { client } from "../client";
 
 function Home() {
-  const userInfo =
-    localStorage.getItem("user") !== undefined
-      ? JSON.parse(localStorage.getItem("user"))
-      : localStorage.clear();
+  const userInfo = fetchUser()
+   
   const [Toggle, seTToggle] = useState(false);
   const [User, setUser] = useState([]);
   const scroll = useRef(null);

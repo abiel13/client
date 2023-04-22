@@ -12,13 +12,14 @@ function SideBar({ user, close }) {
     { name: "Desktop Showroom", img: "" },
     { name: "Code", img: "" },
     { name: "Music", img: "" },
-    { name: "Sites", img: "" },
+    { name: "Nature", img: "" },
+    { name: "Dresses", img: "" },
     {name:'Pets' , img:''}
   ];
   return (
     <div className="flex flex-col justify-between  min-w-210 shadow-lg overflow-y-scroll hide-scrollbar h-full">
       <div className="flex flex-col">
-        <Link to="/feed" className="my-6 px-5">
+        <Link to="/" className="my-6 px-5">
           <span
             className="font-bold"
             onClick={() => {
@@ -30,7 +31,7 @@ function SideBar({ user, close }) {
         </Link>
         <div className="flex flex-col gap-2">
           <NavLink
-            to="/feed"
+            to="/"
             className={({isActive}) => (isActive ? isActiveStyle : style)}
             onClick={() => {
               close && close(false);
