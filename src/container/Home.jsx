@@ -27,12 +27,12 @@ function Home() {
 
 
   return (
-    <div className="flex flex-col bg-gray-50 transition-height duration-75 ease-out md:flex-row">
+    <div className="flex flex-col  bg-gray-50 transition-height duration-75 ease-out md:flex-row">
       <div className="hidden md:flex h-screen flex-initial">
         <SideBar user={User && User} />
       </div>
-      <div className="md:hidden flex">
-        <div className="flex flex-row  shadow-md  w-full p-2 items-center justify-between ">
+      <div className="md:hidden  flex">
+        <div className="flex flex-row  shadow-md   w-full p-2 items-center justify-between ">
           <HiMenu
             fontSize={40}
             cursor={"pointer"}
