@@ -76,7 +76,7 @@ function savePins(id){
                     savePins(_id)
                 }}
                 className="bg-red-500 text-white py-1 px-5 text-base  opacity-70 rounded-md font-bold hover:opacity-100 outline-none ">
-                  Save {save.length}
+                  Save 
                 </button>
               )}
             </div>
