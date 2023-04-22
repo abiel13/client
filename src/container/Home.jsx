@@ -54,7 +54,7 @@ function Home() {
             />
           </Link>
           {Toggle && (
-            <div className="fixed pt-3 p-1 inset-0 w-4/5 animate-slide-in bg-white h-screen shadow-md">
+            <div className="fixed z-[100] pt-3 p-1 inset-0 w-4/5 animate-slide-in bg-white h-screen shadow-md">
               <div className="absolute w-full flex justify-end items-center ">
                 <AiFillCloseCircle
                   fontSize={30}
