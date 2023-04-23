@@ -4,20 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { MdDownloadForOffline } from "react-icons/md";
 import { fetchUser } from "../utils/queries";
 import {v4 as uuidv4} from 'uuid'
-
+import {BsArrowRightCircleFill} from 'react-icons/bs'
+import {AiTwotoneDelete} from 'react-icons/ai'
 
 function Pin({ pin: { save, postedBy, destination, image, _id } }) {
-  const [Hovered, setHovered] = useState(false);
-  const [Saving, setSaving] = useState(false);
+  const [Hovered, setHovered] = useState(false)
   const navigate = useNavigate();
   const user = fetchUser();
 
   const alreadySaved = !!(save?.filter((item) => item?.postedBy?._id === user.sub)?.length);
-  console.log(postedBy)
+ 
 
-function savePins(id){
+  function savePins(id){
     if(!alreadySaved){
-        setSaving(true)
+     
 
         client.patch(id).setIfMissing({save : []}).insert('after' ,'save[-1]' ,[{
             _key:uuidv4(),
@@ -28,9 +28,13 @@ function savePins(id){
             }
         }]).commit().then(() => {
             window.location.reload()
-            setSaving(false)
+          
         })
     }
+}
+
+  function d (id){
+  client.delete(id).then(() => window.location.reload())
 }
 
   return (
@@ -81,6 +85,34 @@ function savePins(id){
                 </button>
               )}
             </div>
+                <div className='w-full flex gap-2 justify-between items-center'>
+                  {
+                    destination && (
+                      <a
+                      href={destination}
+                      target='_blank'
+                      rel='noreffer'
+                      className='bg-white flex gap-2 items-center text-black font-bold opacity-70 px-4 py-2 rounded-full hover:opacity-100'
+                      >
+                        <BsArrowRightCircleFill />
+                        {destination.length > 20 ? destination.slice(8,20) : destination.slice(8)}
+                      </a>
+                    )
+                  }
+                  {
+                    postedBy?._id === user.sub && (
+                      <button
+                      onClick={(e) =>{
+                          e.stopPropagation()
+                          delete(_id)
+                      }}
+                      className="bg-red-500 text-white py-1 px-5 text-base  opacity-70 rounded-md font-bold hover:opacity-100 outline-none ">
+                        Save 
+                      </button>
+                    )
+                  }
+                </div>
+
           </div>
         )}
       </div>

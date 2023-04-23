@@ -12,14 +12,14 @@ export const searchQuery = (search) =>{
         },
         _id,
         destination,
-        postedBy{
+        postedBy->{
             _id,
             userName,
             image
         },
         save[]{
             _key,
-            postedBy{
+            postedBy->{
                 _id,
                 userName,
                 image,
@@ -40,14 +40,14 @@ export const feedQuery = `*[_type == "pin"] | order(_createAt desc) {
     },
     _id,
     destination,
-    postedBy{
+    postedBy->{
         _id,
         userName,
         image
     },
     save[]{
         _key,
-        postedBy{
+        postedBy->{
             _id,
             userName,
             image,
