@@ -57,7 +57,7 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
 
         {Hovered && (
           <div className="absolute top-0 bottom-0 left-0 right-0 rounded-lg transition-all duration-500 ease-in-out flex flex-col items-start justify-between  bg-blackOverlay">
-            <div className="flex items-center justify-between p-1 pt-2 w-full pb-2 pr-2">
+            <div className="flex items-center justify-between p-1 pt-2 w-full pb-2 pr-2 ">
               <div className="flex gap-2">
                 <a
                   href={`${image?.asset?.url}?dl=`}
@@ -85,17 +85,17 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
                 </button>
               )}
             </div>
-                <div className='w-full flex gap-2 justify-between items-center'>
+                <div className='w-full flex px-2 pb-1 gap-2 justify-between items-center'>
                   {
                     destination && (
                       <a
                       href={destination}
                       target='_blank'
                       rel='noreffer'
-                      className='bg-white flex gap-2 items-center text-black font-bold opacity-70 px-4 py-2 rounded-full hover:opacity-100'
+                      className='bg-white flex gap-2 items-center text-black font-bold text-sm opacity-70 px-4 py-2 rounded-full hover:opacity-100'
                       >
                         <BsArrowRightCircleFill />
-                        {destination.length > 20 ? destination.slice(8,20) : destination.slice(8)}
+                        {destination.length > 14 ? destination.slice(8,14) : destination.slice(8)}
                       </a>
                     )
                   }
@@ -106,7 +106,7 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
                           e.stopPropagation()
                           d(_id)
                       }}
-                      className="bg-red-500 text-white py-1 px-5 text-base  opacity-70 rounded-md font-bold hover:opacity-100 outline-none ">
+                      className="bg-red-500 text-white py-1 px-3  text-base  opacity-70 rounded-md font-bold hover:opacity-100 outline-none ">
                       <AiTwotoneDelete />
                       </button>
                     )
