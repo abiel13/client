@@ -14,7 +14,7 @@ function Pins({ user }) {
     <Route path='/' element={<Feed />} />
     <Route path='/category/:catId' element={<Feed />} />
     <Route path='/pin-detail/:pin' element={<PinDetails user={user}/>} />
-    <Route path='/createPin' element={<CreatePin user={user} />} />
+    <Route path='/create-pin' element={<CreatePin user={user} />} />
     <Route path='/search' element={<Searched searched={SerchTermed} setSearched={setSerchTermed} />} />
   </Routes>
 </div>

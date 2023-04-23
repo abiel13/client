@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { urlFor ,client } from "../client";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,  Link } from "react-router-dom";
 import { MdDownloadForOffline } from "react-icons/md";
 import { fetchUser } from "../utils/queries";
 import {v4 as uuidv4} from 'uuid'
@@ -116,6 +116,10 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
           </div>
         )}
       </div>
+      <Link to={`user-profile/${user?.sub}`} className='flex mt-2 gap-2 items-center'>
+      <img src={postedBy.image} alt='userprofile' className="w-8 h-8 rounded-full object-cover" />
+      <p className="font-semibold capitalize">{postedBy?.userName}</p>
+      </Link>
     </div>
   );
 }
