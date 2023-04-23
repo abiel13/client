@@ -33,7 +33,7 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
     }
 }
 
-  function d (id){
+  function d(id){
   client.delete(id).then(() => window.location.reload())
 }
 
@@ -104,10 +104,10 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
                       <button
                       onClick={(e) =>{
                           e.stopPropagation()
-                          delete(_id)
+                          d(_id)
                       }}
                       className="bg-red-500 text-white py-1 px-5 text-base  opacity-70 rounded-md font-bold hover:opacity-100 outline-none ">
-                        Save 
+                      <AiTwotoneDelete />
                       </button>
                     )
                   }
