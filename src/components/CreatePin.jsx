@@ -66,7 +66,7 @@ else{
             ) : (
               <div className=" flex items-center justify-center h-full">
                 <div className="w-1/2 ">
-                       <img src={ImageAsset.url} alt="" className="w-1/2  h-full">
+                       <img src={ImageAsset.url} alt="" className="w-1/2  h-full" />
 <button className="absolute bg-white z-20 left-3 bottom-2 p-3 text-lg rounded-full hover:shadow-md transition-all duration-150 cursor-pointer"  onClick={() => setImageAsset(null)}>
   <MdDelete />
 </button>
