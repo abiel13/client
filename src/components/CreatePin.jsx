@@ -60,7 +60,7 @@ else{
                   </div>
                   <p className="mt-32">Use High Quality Jpeg Gif JPg Png less than 20mb</p>
                 </div>
-                <input type="file" onChange={upload} className="w-0 h-0" />
+                <input type="file" onChange={upload} name='upload-img' className="w-0 h-0" />
               </label>
             ) : (
               <div className="relative h-full">
