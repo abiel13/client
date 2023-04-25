@@ -18,9 +18,10 @@ function CreatePin() {
   const navigate = useNavigate();
 
 const upload = (e) =>{
-const {type ,name} = e.target.files[0];
+const {type , name} = e.target.files[0];
+console.log(type)
 
-if(type === 'image/svg' || type ==='image/png'|| type === 'image/gif' || type==='image/jpg'){
+if(type === 'image/svg' || type ==='image/png'|| type === 'image/gif' || type ==='image/jpg' || type === 'image/jpeg'){
   setWrongImg(false)
   setLoading(true)
   client.assets.upload('image' ,e.target.files[0] , {
@@ -28,7 +29,7 @@ if(type === 'image/svg' || type ==='image/png'|| type === 'image/gif' || type===
     filename:name,
   }).then(data => {setImageAsset(data)
   setLoading(false);
-  }).catch(errv => {console.log(err)})
+  }).catch(err => {console.log(err)})
 
 }
 else{
@@ -63,11 +64,14 @@ else{
                 <input type="file" onChange={upload} name='upload-img'/>
               </label>
             ) : (
-              <div className="relative h-full">
-                <img src={ImageAsset.url} alt="" className="w-full h-full" />
-<button className="absolute bg-white l-3 b-3 p-3 text-lg rounded-full hover:shadow-md transition-all duration-150 cursor-pointer"  onClick={() => setImageAsset(null)}>
+              <div className=" flex items-center justify-center h-full">
+                <div className="w-1/2 ">
+                       <img src={ImageAsset.url} alt="" className="w-1/2  h-full">
+<button className="absolute bg-white z-20 left-3 bottom-2 p-3 text-lg rounded-full hover:shadow-md transition-all duration-150 cursor-pointer"  onClick={() => setImageAsset(null)}>
   <MdDelete />
 </button>
+                </div>
+           
               </div>
             )}
           </div>
