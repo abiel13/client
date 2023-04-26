@@ -34,7 +34,10 @@ function Pin({ pin: { save, postedBy, destination, image, _id } }) {
 }
 
   function d(id){
-  client.delete(id).then(() => window.location.reload())
+  client.delete(id).then(() =>{
+window.location.reload();
+alert('pin has been deleted but it might take time to be removed from database')
+})
 }
 
   return (

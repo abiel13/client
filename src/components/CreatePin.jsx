@@ -32,7 +32,7 @@ function CreatePin({ user }) {
   }
 
   const savePin = () => {
-    if(title && about && destination && category && ImageAsset?._id){
+    if(title && about && category && ImageAsset?._id){
       const doc ={
         _type:'pin',
         about,
@@ -123,7 +123,7 @@ else {setFields(true)
               </label>
             ) : (
               <div className=" flex items-center justify-center h-full">
-                <div className="w-3/4 h-full relative">
+                <div className="w-full h-full relative md:w-4/5">
                   <img src={ImageAsset.url} alt="" className="w-full h-full" />
                   <button
                     className="absolute bg-white z-20 left-3 bottom-2 p-3 text-lg rounded-full hover:shadow-md transition-all duration-150 cursor-pointer"
