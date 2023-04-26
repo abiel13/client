@@ -43,7 +43,7 @@ function Home() {
           />
           <Link to={"/"} className="flex flex-col justify-center items-center">
             <span className="font-bold">
-              Code<span className="text-orange-500">Share</span>{" "}
+              Pic<span className="text-orange-500">Share</span>{" "}
             </span>
           </Link>
           <Link to={`user-profile/${User?.id}`}>

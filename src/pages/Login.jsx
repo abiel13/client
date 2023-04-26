@@ -42,7 +42,7 @@ function Login() {
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-blackOverlay flex flex-col justify-center items-center">
           <div className="flex gap-4">
             <p className="text-3xl text-white font-bold ">
-              Code<span className="text-orange-600">Share</span>{" "}
+              Pic<span className="text-orange-600">Share</span>{" "}
             </p>
           </div>
           <div>
