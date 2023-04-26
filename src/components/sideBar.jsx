@@ -32,7 +32,9 @@ function SideBar({ user, close }) {
           >
             <RiHomeFill /> Home
           </NavLink>
-          <Link to={`create-pin`} className=" font-bold">
+          <Link to={`create-pin`} className=" font-bold px-5"   onClick={() => {
+              close && close(false);
+            }}>
   create pin
         </Link>
 
