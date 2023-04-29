@@ -48,7 +48,7 @@ function AddComment(){
       }
     }
     ]).commit().then(() =>{
-      fetchPinDetails()
+      fetchPinDetails(pin)
       setCommenting(false)
       setComments('')
     })
