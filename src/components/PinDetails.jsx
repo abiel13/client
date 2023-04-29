@@ -40,7 +40,7 @@ function AddComment(){
 
     client.patch(pin).setIfMissing({comments : []}).insert('after' , 'comments[-1]',[
     {
-      Comments,
+      comment:Comments,
       key:uuidv4(),
       postedBy:{
         _type:'postedBy',
@@ -64,7 +64,7 @@ function AddComment(){
         <img
           src={PinDetails?.image && urlFor(PinDetails.image).url()}
           alt="user Post"
-          className="rounded-t-3xl rounded-b-lg "
+          className="rounded-t-3xl rounded-b-lg max-h-370  w-370"
         />{" "}
       </div>
       <div className="flex-1 w-full p-5 xl:min-w-620">
@@ -78,7 +78,7 @@ function AddComment(){
               }}
               className="bg-white text-black w-9 h-9 rounded-full flex items-center justify-center text-lg opacity-70 hover:opacity-100"
             >
-              <MdDownloadForOffline />
+              <MdDownloadForOffline className='text-2xl ' />
             </a>
           </div>
           <a href={PinDetails.destination} className='p-2 shadow-md rounded-md' target="_blank" rel="noreffer">
@@ -107,20 +107,20 @@ function AddComment(){
         </Link>
 
         <h2 className="mt-5 text-2xl">Comments</h2>
-        <div className="max-h-370 overflow-y-auto">
+        <div className="max-h-370 mt-3 overflow-y-auto">
           {PinDetails?.comments?.map((comment, i) => (
             <div key={i} className="flex gap-2 items-center">
               <img src={comment.postedBy.image} alt="uer" className="bg-blue w-8 h-8 rounded-full" />
               <div className="flex flex-col">
                 <p className="font-bold">{comment.postedBy.userName}</p>
-                <p>{comment.comment}</p>
+                <p className="mt-3">{comment.comment}</p>
+                {console.log(comment)}
               </div>
             </div>
           ))}
         </div>
         <div className="flex items-center gap-4 flex-wrap mt-6">
-        <Link
-          to={`user-profile/${PinDetails.postedBy._id}`}
+        <Link to={`user-profile/${PinDetails.postedBy._id}`}
           className="flex mt-2 p-2 gap-2 items-center flex-initial rounded-lg bg-white "
         >
           <img
