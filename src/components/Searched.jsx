@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import MasonryLayout from './MasonryLayout';
+import MasonryLayout from './masonryLayout';
 import { client } from '../client';
 import { feedQuery, searchQuery } from '../utils/queries';
 import Spinner from './Spinner';
