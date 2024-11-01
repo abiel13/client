@@ -3,7 +3,7 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { useParams, useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-oauth';
 
-import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
+import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/queries';
 import { client } from '../client';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
